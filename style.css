@@ -7,16 +7,15 @@
 
 body {
   font-family: 'Segoe UI', system-ui, sans-serif;
-  background-color: #0d0d0d; /* fallback */
   color: #fff;
   scroll-behavior: smooth;
 
-  /* Tiled thumbnail background */
+  /* Full tilemap background */
   background-image: url('thumbnail.png');
-  background-repeat: repeat;
-  background-size: 150px 150px; /* adjust tile size */
-  background-attachment: fixed; /* optional: fixed while scrolling */
-  background-position: center;
+  background-repeat: repeat;        /* tiles in both directions */
+  background-size: auto;            /* keeps original image size */
+  background-position: top left;    /* starts tiling from top-left */
+  background-attachment: scroll;    /* scrolls with content */
 }
 
 /* Navigation */
@@ -25,7 +24,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1a1a1a;
+  background-color: rgba(26,26,26,0.95);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -65,12 +64,13 @@ body {
   justify-content: center;
   height: 80vh;
   text-align: center;
-  background: rgba(0,0,0,0.5); /* semi-transparent overlay */
   padding: 2rem;
 }
 
-.hero h1, .hero p {
-  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
 }
 
 .hero p {
@@ -79,6 +79,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Buttons */
 .btn {
   position: relative;
   padding: 0.8rem 2rem;
@@ -91,8 +92,8 @@ body {
 }
 
 .btn-primary {
-  background: #fff;
-  color: #ff3300;
+  background: #ff6600;
+  color: #fff;
   box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -123,7 +124,7 @@ body {
 }
 
 .audio-player {
-  background: #1e1e1e;
+  background: rgba(30,30,30,0.95);
   padding: 2rem;
   border-radius: 12px;
   width: 100%;
@@ -141,14 +142,14 @@ body {
   background: repeating-linear-gradient(
     to right,
     #ff6600 0 2px,
-    #0d0d0d 2px 4px
+    rgba(0,0,0,0.2) 2px 4px
   );
   border-radius: 6px;
   margin: 1rem 0;
 }
 
 .btn-play {
-  background: #ff6600;
+  background: #ff3300;
   border: none;
   padding: 0.6rem 2rem;
   border-radius: 50px;
@@ -160,7 +161,7 @@ body {
 
 .btn-play:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 20px #ff6600;
+  box-shadow: 0 0 20px #ff3300;
 }
 
 /* About & Contact Sections */
@@ -179,7 +180,7 @@ body {
 
 .about-section p, .contact-section p {
   font-size: 1.1rem;
-  color: #ccc;
+  color: #fff;
   line-height: 1.6;
 }
 
@@ -205,4 +206,6 @@ body {
 
 /* Responsive */
 @media(max-width: 768px) {
-  .hero h1 { font-size: 2
+  .hero h1 { font-size: 2rem; }
+  .nav-links { flex-direction: column; gap: 1rem; }
+}
