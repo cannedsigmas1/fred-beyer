@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>fred-beyer — ambient tape 001</title>
 
-<!-- Open Graph for Discord/preview -->
+<!-- Open Graph for Discord preview -->
 <meta property="og:title" content="fred-beyer — ambient tape 001">
 <meta property="og:description" content="Stream fred-beyer’s ambient tape 001 🎧">
 <meta property="og:image" content="https://cannedsigmas1.github.io/fred-beyer/thumbnail.png">
@@ -18,117 +18,63 @@
 <meta name="twitter:description" content="Stream fred-beyer’s ambient tape 001 🎧">
 <meta name="twitter:image" content="https://cannedsigmas1.github.io/fred-beyer/thumbnail.png">
 
-<style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    background-color: #121212;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .player-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-    margin-bottom: 0.2rem;
-  }
-
-  p {
-    color: #bbb;
-    margin-top: 0;
-    margin-bottom: 1.5rem;
-  }
-
-  .audio-player {
-    background: #1e1e1e;
-    padding: 1.5rem;
-    border-radius: 12px;
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  }
-
-  .waveform {
-    height: 80px;
-    width: 100%;
-    background: repeating-linear-gradient(
-      to right,
-      #f50 0 2px,
-      #121212 2px 4px
-    );
-    border-radius: 6px;
-    margin: 1rem 0;
-  }
-
-  button {
-    background: #f50;
-    border: none;
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-    color: #fff;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-
-  button:hover {
-    background: #e04c00;
-  }
-
-  .thumbnail {
-    margin-top: 2rem;
-    max-width: 90%;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-  }
-
-  a {
-    color: #f50;
-    text-decoration: none;
-  }
-  a:hover { text-decoration: underline; }
-
-  @media(max-width: 600px) {
-    .audio-player { padding: 1rem; }
-    h1 { font-size: 1.4rem; }
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="player-container">
-  <h1>fred-beyer — ambient tape 001</h1>
-  <p>Stream ambient vibes 🎧</p>
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="logo">fred-beyer</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#music">Music</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
+<!-- Hero / Intro Section -->
+<section id="home" class="hero">
+  <h1>fred-beyer</h1>
+  <p>Ambient & electronic soundscapes. Stream, discover, and enjoy original tracks from fred-beyer.</p>
+  <a href="#music" class="btn">Listen Now</a>
+</section>
+
+<!-- Music Player Section -->
+<section id="music" class="music-section">
+  <h2>Current Track: ambient tape 001</h2>
+  <p>Stream the latest track below 🎧</p>
+  
   <div class="audio-player">
     <audio id="audio" src="ambient-tape-001.mp3"></audio>
     <button onclick="togglePlay()">▶ Play / ⏸ Pause</button>
     <div class="waveform"></div>
   </div>
+</section>
 
-  <!-- Thumbnail at the bottom -->
+<!-- About Section -->
+<section id="about" class="about-section">
+  <h2>About fred-beyer</h2>
+  <p>fred-beyer is an experimental electronic artist creating immersive ambient soundscapes for modern listeners. Inspired by nature, technology, and the infinite possibilities of sound.</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:fred-beyer@musicmail.com">fred-beyer@musicmail.com</a></p>
+  <p>Phone: +1 (555) 123-4567</p>
+  <p>Social: <a href="#">Twitter</a> | <a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+</section>
+
+<!-- Thumbnail at the bottom -->
+<section class="thumbnail-section">
   <img src="thumbnail.png" alt="Cover image" class="thumbnail">
-
-  <p>View the project on <a href="https://github.com/cannedsigmas1/fred-beyer">GitHub</a></p>
-</div>
+</section>
 
 <script>
 function togglePlay() {
   const audio = document.getElementById('audio');
-  if (audio.paused) audio.play();
+  if(audio.paused) audio.play();
   else audio.pause();
 }
 </script>
